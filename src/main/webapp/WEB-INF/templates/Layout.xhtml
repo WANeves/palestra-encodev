@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8"/>
+	<title>Encodev - Transportadora</title>
+	
+	<h:outputStylesheet library="algaworks" name="estilo.css" />
+</h:head>
+<h:body>
+	<p:ajaxStatus styleClass="ajax-status">
+		<f:facet name="start">
+			<h:graphicImage library="algaworks" name="carregando.gif" />
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
+
+
+	<header>
+		<h:graphicImage library="algaworks" name="logo.png" />
+	</header>
+
+	<h:form>
+		<p:menubar style="margin-top: -20px; margin-bottom: 20px">
+			<p:submenu label="Cadastros">
+				<p:menuitem value="Entrega" outcome="/CadastroEntrega" />
+				<p:menuitem value="Destinos" />
+			</p:submenu>
+			<p:submenu label="Minha conta">
+				<p:menuitem value="Sair" />
+			</p:submenu>
+		</p:menubar>
+		
+		<p:confirmDialog global="true">
+	       	<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+		</p:confirmDialog>
+	</h:form>
+
+	<div id="conteudo">
+		<ui:insert name="corpo"></ui:insert>
+	</div>
+	
+	<footer>
+		Palestra "Aprenda a aplicar polimorfismo no seu projeto" ministrada no Encodev - Encontro Nacional de Desenvolvimento de Software
+	</footer>
+
+</h:body>
+</html>
